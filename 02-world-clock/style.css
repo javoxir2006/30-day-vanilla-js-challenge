@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #b6ff00;
+    color: #242834;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+header h1{
+    margin-bottom: 10px;
+}
+
+header p{
+    margin-bottom: 7px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+main{
+    margin-top: 20px;
+    width: 100vw;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle{
+    width: 200px;
+    height: 200px;
+    border: 15px solid #fbfcfc;
+    box-shadow: 0px 0px 10px #242834;
+    border-radius: 50%;
+    background-color: transparent;
+    position: relative;
+    margin: 5px;
+}
+
+.face{
+    width: 200px;
+    height: 200px;
+
+    position: absolute;
+    left: -15px;
+    top: -15px;
+}
+
+.hand{
+    width: 50%;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    background-color: #242834;
+}
+
+.face .min-hand{
+    width: 40%;
+    left: 10%;
+}
+
+.face .hour-hand{
+    width: 35%;
+    left: 15%;
+}
+
+.nums{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: -15px;
+    top: -15px;
+
+    font-weight: bold;
+}
+
+.tw{
+    position: absolute;
+    left: calc(50% - 9px);
+}
+
+.thr{
+    position: absolute;
+    top: calc(50% - 5px);
+    left: calc(100% - 12px);
+}
+
+.six{
+    position: absolute;
+    top: calc(100% - 15px);
+    left: calc(50% - 6.5px);
+}
+
+.nine{
+    position: absolute;
+    top: calc(50% - 5px);
+    left: 3px;
+}
+
+.uzbek, .madrid, .newyork, .tokyo{
+    width: 240px;
+    height: 310px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border: 3px solid #242834;
+    border-radius: 30px;
+
+}
+
+.dclock{
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 3px solid #242834;
+    border-radius: 15px;
+}
+
+hr{
+    margin: 20px;
+    height: 3px;
+    background-color: #fbfcfc;
+    width: 100vw;
+}
+
+footer{
+    text-align: center;
+}
