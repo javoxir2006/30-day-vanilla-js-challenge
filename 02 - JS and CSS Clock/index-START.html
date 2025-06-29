@@ -89,7 +89,8 @@
       const hours = now.getHours();
       // i changed to minutes to get the effect of hour hand moving with every minute
       // when using hours, it just stays same at say, 12 and then goes to 13 after 60 minutes, jumbs.
-      const hourDegrees = ((minutes / 720) * 360) + 90;
+      const hours = time.getHours();
+      const hourDegrees = ((hours / 12 ) * 360) + ((minutes / 720) * 360) + 90;
 
 
       secondh.style.transform = `rotate(${secondDegrees}deg)`;
