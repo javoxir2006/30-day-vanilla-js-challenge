@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-Mini-Solar-System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Mini Solar System</h1>
+        <p>inspired by day 3 of 30 days vanilla</p>
+        <p>javascript challenge by Wes Bos</p>
+    </header>
+
+    <main>
+        <div class="controls">
+            <div class="con">
+                <p>Mercury</p>
+                <label for="speed">Time(<span class="textp-mer">10</span>s):</label>
+                <input id="speed" type="range" min="0" max="60" value="10" data-sizing="s" name="speedmer">
+
+                <label for="opacity">Opacity(<span class="textop-mer">100</span>%):</label>
+                <input id="opacity" type="range" min="0" max="100" value="100" data-percent="%" name="opacitymer">
+            </div>
+
+            <div class="con">
+                <p>Venera</p>
+                <label for="speed">Time(<span class="textp-ven">20</span>s):</label>
+                <input id="speed" type="range" min="0" max="60" value="20" data-sizing="s" name="speedven">
+
+                <label for="opacity">Opacity(<span class="textop-ven">100</span>%):</label>
+                <input id="opacity" type="range" min="0" max="100" value="100" data-percent="%" name="opacityven">
+            </div>
+
+            <div class="con">
+                <p>Earth</p>
+                <label for="speed">Time(<span class="textp-ear">30</span>s):</label>
+                <input id="speed" type="range" min="0" max="60" value="30" data-sizing="s" name="speedear">
+
+                <label for="opacity">Opacity(<span class="textop-ear">100</span>%):</label>
+                <input id="opacity" type="range" min="0" max="100" value="100" data-percent="%" name="opacityear">
+            </div>
+
+            <div class="con">
+                <p>Mars</p>
+                <label for="speed">Time(<span class="textp-mar">40</span>s):</label>
+                <input id="speed" type="range" min="0" max="60" value="40" data-sizing="s" name="speedmar">
+
+                <label for="opacity">Opacity(<span class="textop-mar">100</span>%):</label>
+                <input id="opacity" type="range" min="0" max="100" value="100" data-percent="%" name="opacitymar">
+            </div>
+
+            <div class="con">
+                <p>Jupiter</p>
+                <label for="speed">Time(<span class="textp-jup">50</span>s):</label>
+                <input id="speed" type="range" min="0" max="60" value="50" data-sizing="s" name="speedjup">
+
+                <label for="opacity">Opacity(<span class="textop-jup">100</span>%):</label>
+                <input id="opacity" type="range" min="0" max="100" value="100" data-percent="%" name="opacityjup">
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="sun">
+                <div class="planet mer"></div>
+                <div class="planet ven"></div>
+                <div class="planet ear"></div>
+                <div class="planet mar"></div>
+                <div class="planet jup"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div><hr></div>
+        <p>developed by <b>O'tamov Javoxir</b></p>
+        <p><a href="https://github.com/javoxir2006">GitHub</a> | 2025</p>
+    </footer>
+    
+    <script src="index.js"></script>
+</body>
+</html>
