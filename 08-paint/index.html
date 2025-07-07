@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08-paint</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Mini Paint</h1>
+        <p>inspired by day 8 of 30 day vanilla js challenge</p>
+    </header>
+
+    <main>
+        <div class="tools">
+            <div class="colors">
+                <div class="color color1 color-active" data-color="black" onclick="checkColor(this)"></div>
+                <div class="color color2" data-color="rgb(0, 255, 0)" onclick="checkColor(this)"></div>
+                <div class="color color3" data-color="red" onclick="checkColor(this)"></div>
+                <div class="color color4" data-color="blue" onclick="checkColor(this)"></div>
+                <div class="color color5" data-color="rgb(136, 0, 255)" onclick="checkColor(this)"></div>
+                <div class="color color6" data-color="yellow" onclick="checkColor(this)"></div>
+            </div>
+
+            <div class="linew">
+                <div class="line-1 line line-active" data-width="2" onclick="check(this)"><div class="width1"></div></div>
+                <div class="line-2 line" data-width="6" onclick="check(this)"><div class="width2"></div></div>
+                <div class="line-3 line" data-width="10" onclick="check(this)"><div class="width3"></div></div>
+                <div class="line-4 line" data-width="14" onclick="check(this)"><div class="width4"></div></div>
+                <div class="line-5 line" data-width="18" onclick="check(this)"><div class="width5"></div></div>
+            </div>
+
+            <div class="special" onclick="checkColor(this)"><p>s</p></div>
+            <div class="eraser" data-ecolor="#fbfbfb" onclick="checkColor(this)"><i class="fa-solid fa-eraser"></i></div>
+        </div>
+        <div class="paint-area">
+            <canvas id="draw"></canvas>
+        </div>
+    </main>
+
+    <footer>
+        <p>Made by <b>O'ktamov Javoxir</b></p>
+        <p><a href="https://github.com/javoxir2006">GitHub</a> | 2025</p>
+    </footer>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
