@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11-video</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     
+    <div class="area">
+        <div class="big"><i class="fa-solid fa-play"></i></div>
+        <video src="652333414.mp4" class="video" disablepictureinpicture width="600px"></video>
+
+        <div class="pro-con">
+            <div class="progress">
+                <div class="filled"></div>
+            </div>
+            <div class="controls">
+                <div class="play"><i class="fa-solid fa-play"></i></div>
+                <div class="volume">
+                    <input type="range" name="volume" min="0" max="1" value="1.0" step="0.05">
+                    <div><i class="fa-solid fa-volume-high"></i></div>
+
+                    <input type="range" name="playbackRate" min="0.5" max="2" value="1" step="0.1">
+                    <div><i class="fa-solid fa-gauge"></i></div>
+                </div>
+                <div class="skips">
+                    <div class="skip" data-skip="-10">-10s</div>
+                    <div class="skip" data-skip="+10">+10s</div>
+                </div>
+                <div class="expand"><i class="fa-solid fa-expand"></i></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
