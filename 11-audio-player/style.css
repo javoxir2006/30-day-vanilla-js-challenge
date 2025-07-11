@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins';
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #030f0f;
+    color: #00df82;
+}
+
+header{
+    margin: 40px;
+    text-align: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 450px;
+}
+
+.link-page{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+}
+
+.link-page input{
+    width: 70%;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #00df82;
+    color: #030f0f;
+    border: 3px solid white;
+    font-weight: bold;
+}
+
+.link-page button{
+    width: 25%;
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    background-color: #00df82;
+    color: #030f0f;
+    font-weight: bold;
+    box-shadow: 0px 0px 7px white;
+    border: 3px solid white;
+    cursor: pointer;
+}
+
+.player{
+    border: 3px solid #00df82;
+    border-radius: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 400px;
+}
+
+.cover{
+    width: 100%;
+}
+
+.cover img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+.title{
+    text-align: center;
+    padding: 10px 50px 10px 50px;
+    margin-bottom: 20px;
+}
+
+.progress{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.progress_filled{
+    width: 65%;
+    height: 7px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.progress_bar{
+    width: 50%;
+    background-color: #00df82;
+    height: 7px;
+    border-radius: 10px;
+}
+
+.current, .duration{
+    width: 50px;
+}
+
+.duration{
+    text-align: right;
+}
+
+.controls{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.play, .pause{
+    font-size: 70px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pause{
+    display: none;
+}
+
+.skip{
+    font-weight: bold;
+    font-size: 20px;
+    cursor: default;
+}
+
+iframe{
+    display: none;
+}

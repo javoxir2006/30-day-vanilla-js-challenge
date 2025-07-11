@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11-audio-player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Audio Player</h1>
+        <p>just wanted to do it</p>
+    </header>
+
+    <main>
+        <div class="link-page">
+            <input type="text" id="link" placeholder="https://youtu.be/...">
+            <button class="link-btn">Listen</button>
+        </div>
+
+        <div class="player">
+            <div class="cover">
+                
+            </div>
+
+            <div class="title">
+                
+            </div>
+
+            <div class="progress">
+                <div class="current">--:--</div>
+                <div class="progress_filled">
+                    <div class="progress_bar"></div>
+                </div>
+                <div class="duration">--:--</div>
+            </div>
+
+            <div class="controls">
+                <div class="skip" data-skip="-10">-10</div>
+                <div class="play"><i class="fa-solid fa-circle-play"></i></div>
+                <div class="pause"><i class="fa-solid fa-circle-pause"></i></div>
+                <div class="skip" data-skip="+10">+10</div>
+            </div>
+        </div>
+    </main>
+
+    <div class="embed">
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
