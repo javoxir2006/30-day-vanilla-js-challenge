@@ -131,10 +131,13 @@ main{
     display: none;
 }
 
-.skip{
+.skip, .skip button{
     font-weight: bold;
     font-size: 20px;
     cursor: default;
+    border: none;
+    background-color: transparent;
+    color: #00df82;
 }
 
 iframe{
