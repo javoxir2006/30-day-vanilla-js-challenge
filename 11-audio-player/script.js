@@ -13,11 +13,10 @@ const pauseBtn = document.querySelector('.pause');
 const embedCon =document.querySelector('.embed');
 
 // FETCH VARS
-const API_KEY = 'AIzaSyC_ax4z_P5GWdzBkB33OfCqsrhz1F6BBLs';
+const API_KEY = 'here needed';
 
 // FUNCTIONS
 let videoId = '';
-let titles = '';
 let img = '';
 
 function gettingURL(){
@@ -26,16 +25,14 @@ function gettingURL(){
 
     if(val.includes('https://youtu.be/')){
         videoId = val.replace('https://youtu.be/', '').split('?')[0];
-        console.log(videoId);
     }else{
-        console.log('fauled');
+        window.alert('Enter a valid link');
     }
+
     const embed = `https://www.youtube.com/embed/${videoId}?enablejsapi=1`;
-    embedCon.innerHTML = `<iframe id="ytplayer" src="${embed}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+    embedCon.innerHTML = `<iframe id="player" src="${embed}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
 
-
-     const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${API_KEY}
-`;
+     const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${API_KEY}`;
     fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -44,51 +41,64 @@ function gettingURL(){
             img = data.items[0].snippet.thumbnails.maxres.url;
             cover.innerHTML = `<img src="${img}">`;
         });
-
+    
     setTimeout(() => {
-        player = new YT.Player('ytplayer', {
+        player = new YT.Player('player', {
             events: {
                 'onReady': onPlayerReady
             }
-        });
-    }, 500); // Wait a moment to ensure iframe is in DOM
-
+    });}, 500);
 }
-
-
-
-
 
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
+
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
+var player;
 
-
-    function onPlayerReady() {
-        setInterval(updateTimeDisplay, 500); // Update every 0.5s
+function onPlayerReady() {
+    setInterval(() => {
+        updateTime();
+    }, 500);
     }
 
-  function updateTimeDisplay() {
-    if (player && player.getCurrentTime) {
-      const first = Math.floor(player.getCurrentTime());
-      const second = Math.floor(player.getDuration());
-      
-      current.textContent = `${Math.floor(first / 60).toString().padStart(2, '0')}:${Math.floor(first % 60).toString().padStart(2, '0')}`;
-      total.textContent = `${Math.floor(second / 60).toString().padStart(2, '0')}:${Math.floor(second % 60).toString().padStart(2, '0')}`;
+function updateTime(){
+    if(player && player.getCurrentTime){
+        const currentTime = player.getCurrentTime();
+        const duration = player.getDuration();
 
-      const percent = (first / second) * 100;
-      progressBar.style.width = `${percent}%`;
-      console.log(percent, first, second);
+        const percent = (currentTime / duration) * 100;
+        progressBar.style.width = `${percent}%`;
+
+        if(duration / 3600 >= 1){
+            const h = Math.floor(duration / 3600);
+            total.textContent = `${(h).toString()}:${(Math.floor(duration / 60 - h * 60)).toString().padStart(2, '0')}:${(Math.floor(duration % 60)).toString().padStart(2, '0')}`;
+        }else{
+            total.textContent = `${(Math.floor(duration / 60)).toString().padStart(2, '0')}:${(Math.floor(duration % 60)).toString().padStart(2, '0')}`;
+        }
+
+        if(currentTime / 3600 >= 1){
+            const h = Math.floor(currentTime / 3600);
+            current.textContent = `${h.toString()}:${(Math.floor(currentTime / 60 - h * 60)).toString().padStart(2, '0')}:${(Math.floor(currentTime % 60)).toString().padStart(2, '0')}`;
+        } else{
+            current.textContent = `${(Math.floor(currentTime / 60)).toString().padStart(2, '0')}:${(Math.floor(currentTime % 60)).toString().padStart(2, '0')}`;
+        }
     }
-
-  }
-
-function skipIT(){
-    const currentt = player.getCurrentTime();
-    player.seekTo(currentt + parseFloat(this.dataset.skip));
 }
+
+function skipIt() {
+    const amount = parseFloat(this.dataset.skip);
+    player.seekTo(player.getCurrentTime() + amount);
+}
+
+function progressMove(e){
+    const time = (e.offsetX / progress.offsetWidth) * player.getDuration();
+    player.seekTo(time);
+}
+
+
 
 // EVENTS
 listenBtn.addEventListener('click', gettingURL);
@@ -103,4 +113,15 @@ pauseBtn.addEventListener('click', () => {
     playBtn.style.display = 'block';
 })
 
-skipBtns.forEach(ski => ski.addEventListener('click', skipIT));
+skipBtns.forEach(ski => ski.addEventListener('click', skipIt));
+
+let mouseDown = false;
+progress.addEventListener('click', progressMove);
+progress.addEventListener('mousedown', () => mouseDown = true);
+progress.addEventListener('mouseup', () => mouseDown = false);
+progress.addEventListener('mouseout', () => mouseDown = false);
+progress.addEventListener('mousemove', (e) => {
+    if(mouseDown){
+        progressMove(e);
+    }
+})
