@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Courier New", Courier, monospace;
+}
+
+body{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #373539;
+    color: #e0e0e0;
+}
+
+header{
+    text-align: center;
+    margin: 20px;
+    font-size: 18px;
+}
+
+header p{
+    margin-top: 10px;
+}
+
+main{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.addnew{
+    width: 300px;
+    height: 40px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    display: flex;
+}
+
+.addnew input[type=text] {
+    background-color: #121312;
+    color: #e0e0e0;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bolder;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.addnew input[type=submit] {
+    background-color: transparent;
+    color: #e0e0e0;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bolder;
+    flex-grow: 2;
+}
+
+.container{
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    width: 400px;
+}
+
+.container h3{
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 10px;
+}
+
+ul li{
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #121312;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bolder;
+}
+
+input[type='checkbox'] {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+input:checked + label{
+    text-decoration: line-through;
+    color: gray;
+}
+
+.addi{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.addi button, .check button {
+    padding: 10px;
+    font-weight: bolder;
+    color: #ef2316;
+    background-color: #373539;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.check button{
+    color: #e0e0e0;
+}
+
+
+hr{
+    width: 100vw;
+    height: 4px;
+    background-color: black;
+}
+
+footer{
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer p{
+    margin-top: 10px;
+}
+
+footer a{
+    color: #ef2316;
+}
